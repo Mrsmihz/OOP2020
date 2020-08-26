@@ -1,6 +1,6 @@
 public class Game01 {
     public static void main(String[] args) {
-        Player p1 = createPlayer("Alex", 1000, 10, 5);
+        Player p1 = createPlayer("Alex", 1000, 20, 5);
         Monster m1 = createMonster("poo1", 100, 10, 3);
         Monster m2 = createMonster("poo2", 120, 12, 5);
         p1.attack(m1);
