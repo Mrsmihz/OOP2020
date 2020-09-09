@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        seventh();
+        third();
     }
     public static void first(){
         Account a1 = new Account(50000, "61070033");

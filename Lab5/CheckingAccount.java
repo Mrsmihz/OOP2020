@@ -7,7 +7,7 @@ public class CheckingAccount extends Account{
     public CheckingAccount(double balance, String name, double credit){
         super(balance, name);
         if (credit >= 0){
-            this.credit = credit;
+            setCredit(credit);
         }
         else{
             System.out.println("Input number must be a positive integer.");
@@ -37,8 +37,8 @@ public class CheckingAccount extends Account{
         }
     }
     public void withdraw(int a){
-        if (super.balance - a > 0){
-            super.withdraw(a);
+        if (super.balance - a >= 0){
+            super.balance -= a;
             System.out.printf("%.1f bath is withdrawn from %s and your credit balance is %.1f\n", a, super.name, this.credit);
         }
         else if (super.balance - a < 0){
