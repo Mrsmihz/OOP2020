@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.lab7;
 
 /**
  *
@@ -12,9 +11,6 @@ package com.mycompany.lab7;
 import javax.swing.*;
 import java.awt.*;
 import javax.swing.plaf.ColorUIResource;
-import java.text.*;
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeEvent;
 import java.awt.event.*;
 public class SimpleCalGUI implements ActionListener{
     private JFrame myFrame;
@@ -38,13 +34,9 @@ public class SimpleCalGUI implements ActionListener{
         btnPanel = new JPanel();
         btnPanel.setLayout(new FlowLayout());
         btnMultiply = new JButton("Multiply");
-        btnMultiply.setActionCommand("Multiply");
         btnDivide = new JButton("Divide");
-        btnDivide.setActionCommand("Divide");
         btnAdd = new JButton("Add");
-        btnAdd.setActionCommand("Add");
         btnSub = new JButton("Subtract");
-        btnSub.setActionCommand("Subtract");
         btnAdd.addActionListener(this);
         btnSub.addActionListener(this);
         btnMultiply.addActionListener(this);
@@ -77,7 +69,7 @@ public class SimpleCalGUI implements ActionListener{
         
     }
     public void actionPerformed(ActionEvent e){
-        String command = e.getActionCommand();
+        System.out.println(e.getSource());
         double a = 0, b = 0;
         try{
             a = Double.parseDouble(firstText.getText());
@@ -87,19 +79,19 @@ public class SimpleCalGUI implements ActionListener{
             firstText.setText("");
             secondText.setText("");
         }
-        if (command.equals("Add")){
+        if (e.getSource().equals(btnAdd)){
             System.out.println("Add");
             resultText.setText(String.format("%f", a+b));
         }
-        else if(command.equals("Subtract")){
+        else if(e.getSource().equals(btnSub)){
             System.out.println("Subtract");
             resultText.setText(String.format("%f", a-b));
         }
-        else if(command.equals("Multiply")){
+        else if(e.getSource().equals(btnMultiply)){
             System.out.println("Multiply");
             resultText.setText(String.format("%f", a*b));
         }
-        else if(command.equals("Divide")){
+        else if(e.getSource().equals(btnDivide)){
             System.out.println("Divide");
             resultText.setText(String.format("%f", a/b));
         }

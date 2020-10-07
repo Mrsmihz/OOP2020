@@ -4,27 +4,35 @@ public class Account{
 
     public Account(double balance, String name){
         this.balance = balance;
-        setName(name);
+        this.name = name;
     }
-    public void deposit(double a){
+    public boolean deposit(double a){
         if (a > 0){
             this.balance += a;
-            System.out.printf("%.1f baht is deposited to %s.\n", a, name);
+            //System.out.printf("%.1f baht is deposited to %s.\n", a, name);
+            return true;
         }
         else{
-            System.out.println("Input number must be a positive integer.");
+            //System.out.println("Input number must be a positive integer.");
+            return false;
         }
     }
-    public void withdraw(double a){
+    public boolean withdraw(double a){
         if (a > 0 && balance - a > 0){
             this.balance -= a;
-            System.out.printf("%.1f baht is withdrawn from %s.\n", a, name);
+            //System.out.printf("%.1f baht is withdrawn from %s.\n", a, name);
+            return true;
         }
         else if (a < 0){
-            System.out.println("Input number must be a positive integer.");
+            //System.out.println("Input number must be a positive integer.");
+            return false;
         }
         else if ((balance - a) < 0){
-            System.out.println("Not enough money!");
+            //System.out.println("Not enough money!");
+            return false;
+        }
+        else{
+            return false;
         }
     }
     public void setName(String name){

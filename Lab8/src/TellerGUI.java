@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.lab7;
 
 /**
  *
@@ -11,14 +10,23 @@ package com.mycompany.lab7;
  */
 import javax.swing.*;
 import java.awt.*;
-public class TellerGUI {
+import java.awt.event.*;
+import java.text.DecimalFormat;
+
+public class TellerGUI implements ActionListener{
     private JFrame myFrame;
     private JPanel mainPanel, topPanel, bottomPanel;
     private JLabel balanceLabel, amountLabel;
     private JButton btnDeposit, btnWithdraw, btnExit;
     private JTextField balanceField, amountField;
     private Font myFont;
+    private CheckingAccount acct;
+    private Customer c1;
+    private DecimalFormat dformat;
     public TellerGUI(){
+        dformat = new DecimalFormat("#0.####");
+        acct = new CheckingAccount(10000, "FAITH", 0);
+        c1 = new Customer("FAITH", "SMTIH", acct);
         myFrame = new JFrame("TellerGUI");
         //myFrame.setSize(400, 400);
         myFrame.setLayout(new BorderLayout());
@@ -34,7 +42,7 @@ public class TellerGUI {
         topPanel.setLayout(new GridLayout(2, 2));
         balanceLabel = new JLabel(" Balance", JLabel.CENTER);
         amountLabel = new JLabel(" Amount", JLabel.CENTER);
-        balanceField = new JTextField("6000");
+        balanceField = new JTextField();
         amountField = new JTextField();
         balanceField.setHorizontalAlignment(JTextField.RIGHT);
         amountField.setHorizontalAlignment(JTextField.RIGHT);
@@ -44,6 +52,7 @@ public class TellerGUI {
         amountField.setFont(myFont);
         balanceField.setPreferredSize(new Dimension(200, 40));
         balanceField.setEditable(false);
+        balanceField.setText(String.valueOf(c1.getAcct().getBalance()));
         topPanel.add(balanceLabel);
         topPanel.add(balanceField);
         topPanel.add(amountLabel);
@@ -56,6 +65,9 @@ public class TellerGUI {
         btnDeposit = new JButton("Deposit");
         btnWithdraw = new JButton("Withdraw");
         btnExit = new JButton("Exit");
+        btnDeposit.addActionListener(this);
+        btnWithdraw.addActionListener(this);
+        btnExit.addActionListener(this);
         btnDeposit.setPreferredSize(new Dimension(100, 30));
         btnWithdraw.setPreferredSize(new Dimension(100, 30));
         btnExit.setPreferredSize(new Dimension(100, 30));
@@ -69,5 +81,40 @@ public class TellerGUI {
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         myFrame.setVisible(true);
     }
-    
+    public void actionPerformed(ActionEvent e){
+        double a = 0;
+        if (e.getSource().equals(btnDeposit)){
+            try {
+                a = Double.parseDouble(amountField.getText());
+            }
+            catch (Exception excep){
+                System.out.println(excep);
+            }
+            if (c1.getAcct().deposit(a)){
+                balanceField.setText(String.valueOf(dformat.format(c1.getAcct().getBalance())));
+                amountField.setText("");
+            }
+            else{
+                return;
+            }
+        }
+        else if (e.getSource().equals(btnWithdraw)){
+            try {
+                a = Double.parseDouble(amountField.getText());
+            }
+            catch (Exception excep){
+                System.out.println(excep);
+            }
+            if (c1.getAcct().withdraw(a)){
+                balanceField.setText(String.valueOf(dformat.format(c1.getAcct().getBalance())));
+                amountField.setText("");
+            }
+            else{
+                return;
+            }
+        }
+        else if (e.getSource().equals(btnExit)){
+            System.exit(1);
+        }
+    }
 }
