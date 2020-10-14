@@ -24,13 +24,13 @@ public class MmGUI {
         myFrame = new JFrame("MMGUI");
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         myFrame.setSize(1024, 800);
-        
+
         myMenuBar = new JMenuBar();
         fileMenu = new JMenu("File");
         editMenu = new JMenu("Edit");
         viewMenu = new JMenu("View");
         newMenu = new JMenu("New");
-        
+
         windowItem = new JMenuItem("Window");
         msgItem = new JMenuItem("Message");
         openItem = new JMenuItem("Open");
@@ -46,30 +46,30 @@ public class MmGUI {
         myMenuBar.add(editMenu);
         myMenuBar.add(viewMenu);
         myFrame.setJMenuBar(myMenuBar);
-        
+
         mainPanel = new JPanel();
         mainPanel.setLayout(new BorderLayout());
         myFrame.add(mainPanel);
-        
+
         myDesktopPane = new JDesktopPane();
         myDesktopPane.setBackground(new ColorUIResource(new Color(0, 0, 0)));
-        
-        
+
+
         JInternalFrame frame1 = createInternalFrame();
-        createFrameContents(frame1, "TEST1");
+        //createFrameContents(frame1, "");
         frame1.setVisible(true);
         JInternalFrame frame2 = createInternalFrame();
-        createFrameContents(frame2, "TEST2");
+        //createFrameContents(frame2, "");
         frame2.setVisible(true);
         JInternalFrame frame3 = createInternalFrame();
-        createFrameContents(frame3, "TEST3");
+        //createFrameContents(frame3, "");
         frame3.setVisible(true);
         changeLocation(frame1, frame2);
         changeLocation(frame2, frame3);
         myDesktopPane.add(frame1);
         myDesktopPane.add(frame2);
         myDesktopPane.add(frame3);
-        
+
         mainPanel.add(myDesktopPane);
         myFrame.setResizable(false);
         myFrame.setVisible(true);

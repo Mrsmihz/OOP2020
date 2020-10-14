@@ -14,7 +14,7 @@ import javax.swing.*;
 import javax.swing.plaf.ColorUIResource;
 public class Main {
     public static void main(String[] args) {
-        //SwingUtilities.invokeLater(() -> {new MmGUI();});
-        new SimpleCalGUI();
+        SwingUtilities.invokeLater(() -> {new MmGUI();});
+        //new SimpleCalGUI();
     }
 }

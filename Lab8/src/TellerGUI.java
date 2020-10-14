@@ -26,7 +26,7 @@ public class TellerGUI implements ActionListener{
     public TellerGUI(){
         dformat = new DecimalFormat("#0.####");
         acct = new CheckingAccount(10000, "FAITH", 0);
-        c1 = new Customer("FAITH", "SMTIH", acct);
+        c1 = new Customer("FAITH", "SMITH", acct);
         myFrame = new JFrame("TellerGUI");
         //myFrame.setSize(400, 400);
         myFrame.setLayout(new BorderLayout());
@@ -95,6 +95,7 @@ public class TellerGUI implements ActionListener{
                 amountField.setText("");
             }
             else{
+                amountField.setText("");
                 return;
             }
         }
@@ -110,6 +111,7 @@ public class TellerGUI implements ActionListener{
                 amountField.setText("");
             }
             else{
+                amountField.setText("");
                 return;
             }
         }
