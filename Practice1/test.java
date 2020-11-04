@@ -2,7 +2,7 @@ import java.util.*;
 
 public class test{
     public static void main(String[] args){
-        System.out.println(quiz3(4));
+        System.out.println(quiz3(17));
     }
     public static void quiz2(int n){
         if (n == 8){
@@ -21,7 +21,6 @@ public class test{
         }
         else{
             r1 = n+quiz1(n/2);
-            System.out.println(r1);
         }
         return r1;
     }

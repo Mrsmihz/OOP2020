@@ -44,6 +44,9 @@ public class StudentViewsController implements ActionListener, WindowListener {
             if (temp > 0){
                 studentViews.getMoneyField().setText(String.valueOf(temp-100));
             }
+            else{
+                JOptionPane.showMessageDialog(studentViews.getMainFrame(), "Not enough money", "Alert", JOptionPane.WARNING_MESSAGE);
+            }
         }
     }
     private void saveObject(){
@@ -51,8 +54,11 @@ public class StudentViewsController implements ActionListener, WindowListener {
         Integer id = 0;
         try{
             id = Integer.parseInt(studentViews.getIdField().getText());
+            studentViews.getMainFrame().setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
         }
         catch (NumberFormatException e){
+            studentViews.getMainFrame().setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
             JOptionPane.showMessageDialog(studentViews.getMainFrame(), "ID format is invalid", "Alert", JOptionPane.WARNING_MESSAGE);
         }
         Integer money = Integer.parseInt(studentViews.getMoneyField().getText());
