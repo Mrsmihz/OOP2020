@@ -131,10 +131,16 @@ public class BookController implements ActionListener, ItemListener {
         try {
             double price = Double.parseDouble(bookView.getPriceTextField().getText());
             Book book = new Book(name, type, price);
-            this.bookData.set(indexOfBook, book);
-            reWriteObject(this.bookData);
-            this.bookData = getObject();
-            JOptionPane.showMessageDialog(bookView.getMainFrame(), "Updated Book Collections.");
+            if (bookData.size() > 0){
+                this.bookData.set(indexOfBook, book);
+                reWriteObject(this.bookData);
+                this.bookData = getObject();
+                JOptionPane.showMessageDialog(bookView.getMainFrame(), "Updated Book Collections.");
+            }
+            else{
+                JOptionPane.showMessageDialog(bookView.getMainFrame(), "Collections is empty.");
+            }
+
         }
         catch (NumberFormatException e){
             JOptionPane.showMessageDialog(bookView.getMainFrame(), "Price is incorrect format.");
