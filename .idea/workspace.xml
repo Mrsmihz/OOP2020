@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39a87d5f-cb3d-4220-ae92-95ce5bd85e38" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practice1/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/Practice1/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab12/src/controller/PoringAddController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab12/src/controller/PoringAddController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab12/src/controller/PoringController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab12/src/controller/PoringController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab12/src/controller/StopWatchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab12/src/controller/StopWatchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab12/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab12/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab12/src/model/MyStopWatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab12/src/model/MyStopWatch.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +23,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="15" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Lab10" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -34,6 +39,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1602054453023</updated>
+      <workItem from="1606114222934" duration="46000" />
     </task>
     <servers />
   </component>
@@ -46,9 +52,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="835" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1603896549522" />
-    <state x="438" y="140" key="new project wizard" timestamp="1603896438876">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="383" y="153" key="new project wizard" timestamp="1606114267681">
+      <screen x="0" y="25" width="1680" height="954" />
     </state>
     <state x="438" y="140" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1603896438876" />
+    <state x="383" y="153" key="new project wizard/0.25.1680.954@0.25.1680.954" timestamp="1606114267681" />
   </component>
 </project>

@@ -17,10 +17,10 @@ public class MyStopWatch extends JLabel implements Runnable{
         addMouseListener(this.sc);
     }
     private void checkPaused(){
-        synchronized (lock){
+        synchronized (this){
             while (paused){
                 try{
-                    lock.wait();
+                    this.wait();
                 }
                 catch (InterruptedException ex){
                     ex.printStackTrace();
@@ -32,9 +32,9 @@ public class MyStopWatch extends JLabel implements Runnable{
         paused = true;
     }
     public void resumeThread(){
-        synchronized (lock){
+        synchronized (this){
             paused = false;
-            lock.notify();
+            this.notify();
         }
     }
     @Override
@@ -51,6 +51,7 @@ public class MyStopWatch extends JLabel implements Runnable{
                 setText(String.format("%02d:%02d:%02d", hour, min, sec));
                 time += 1;
                 Thread.sleep(1000);
+                System.out.println(Thread.currentThread().getName());
             }
         }
         catch (InterruptedException ex){

@@ -21,6 +21,24 @@ public class PoringController implements Runnable, MouseListener {
         poringGUI.getPoringLabel().setText(String.valueOf(Poring.getPoring_count()));
         poringGUI.getPoringLabel().setIcon(poring.getIcon());
         poringGUI.getMainFrame().validate();
+        int velocity = 2;
+        int x = poringGUI.getMainFrame().getLocationOnScreen().x;
+        int y = poringGUI.getMainFrame().getLocationOnScreen().y;
+        while(true){
+            try{
+                Thread.sleep(20);
+                poringGUI.getMainFrame().setLocation(x,y+velocity);
+                Thread.sleep(20);
+                poringGUI.getMainFrame().setLocation(x, y-velocity);
+                Thread.sleep(20);
+                poringGUI.getMainFrame().setLocation(x+velocity, y);
+                Thread.sleep(20);
+                poringGUI.getMainFrame().setLocation(x, y);
+            }
+            catch(InterruptedException ex){
+                ex.printStackTrace();
+            }
+        }
     }
 
     @Override

@@ -23,6 +23,7 @@ public class StopWatchController implements MouseListener {
                 myStopWatch.resumeThread();
             }
             else{
+                //myStopWatch.checkPaused(true);
                 myStopWatch.pauseThread();
             }
         }
